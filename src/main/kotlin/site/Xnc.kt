@@ -41,7 +41,7 @@ class Xnc(private val driver: WebDriver) {
                 println("이름$name")
                 println("규격$size")
                 println("재질$texture")
-                println("가격$price")
+                println("가격$price\n")
                 salesListXncData.add(XncData(name, size, texture, price))
             } catch (e: Exception) {
                 println("오류 발생($productIndex)")

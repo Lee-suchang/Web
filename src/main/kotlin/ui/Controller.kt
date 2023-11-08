@@ -5,10 +5,12 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.support.ui.WebDriverWait
 import site.*
-import tornadofx.box
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileWriter
 
 class Controller {
-    private lateinit var driver : WebDriver
+    private lateinit var driver: WebDriver
     private lateinit var element: WebDriverWait
 
     private lateinit var box4u: BoxForYou
@@ -17,8 +19,26 @@ class Controller {
     private lateinit var ybMall: YbMall
     private lateinit var thirdBox: ThirdBox
     private lateinit var xnc: Xnc
+    private var driverPath: String = ""
+    private var excelPath: String = ""
 
-    fun InitDriver(driverPath: String)    {
+    fun getSettingFile() {
+        try {
+            val driverPathBufferReader = File(SETTING_FILE_PATH).bufferedReader()
+            driverPath = driverPathBufferReader.readLine().toString()
+            excelPath = driverPathBufferReader.readLine().toString()
+            println(driverPath)
+            println(excelPath)
+        } catch (e: Exception) {
+            val writer = BufferedWriter(FileWriter(File(FILE_PATH, "setting.txt")))
+            writer.close()
+        }
+    }
+
+    fun getDriverPath(): String = driverPath
+    fun getExcelPath(): String = excelPath
+
+    fun initDriver(driverPath: String) {
         System.setProperty("webdriver.chrome.driver", driverPath)
         val options = ChromeOptions()
         options.setBinary("")
@@ -37,13 +57,15 @@ class Controller {
         xnc = Xnc(driver)
     }
 
-    fun GetDriver() = driver
-    fun GetElement() = element
-    fun GetBox4u() = box4u
-    fun GetmjBox() = mjBox
-    fun GetBoxCorea() = boxCorea
-    fun GetYbMall() = ybMall
-    fun GetThirdBox() = thirdBox
-    fun GetXnc() = xnc
+    fun getDriver() = driver
+    fun getElement() = element
+    fun getBox4u() = box4u
+    fun getMjBox() = mjBox
+    fun getBoxCorea() = boxCorea
+    fun getYbMall() = ybMall
+    fun getThirdBox() = thirdBox
+    fun getXnc() = xnc
+    fun quit() = driver.quit()
+
 
 }
