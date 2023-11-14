@@ -74,7 +74,7 @@ class BoxForYou(private val driver: WebDriver) {
         try {
             // 엑셀 워크북 및 시트 생성
             val workbook: Workbook = XSSFWorkbook()
-            val sheet: XSSFSheet = workbook.createSheet("SalesData") as XSSFSheet
+            val sheet: XSSFSheet = workbook.createSheet("박스포유") as XSSFSheet
 
             // 엑셀에 데이터 작성
             val headerRow: XSSFRow = sheet.createRow(0)

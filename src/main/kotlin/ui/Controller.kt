@@ -34,10 +34,8 @@ class Controller {
             writer.close()
         }
     }
-
     fun getDriverPath(): String = driverPath
     fun getExcelPath(): String = excelPath
-
     fun initDriver(driverPath: String) {
         System.setProperty("webdriver.chrome.driver", driverPath)
         val options = ChromeOptions()
@@ -46,6 +44,7 @@ class Controller {
         options.addArguments("--disable-popup-blocking")
         options.addArguments("--disable-default-apps")
         options.addArguments("--window-size=1920,1080")
+
         driver = ChromeDriver(options)
         element = WebDriverWait(driver, 10)
 
