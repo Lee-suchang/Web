@@ -72,7 +72,7 @@ class ThirdBox(private val driver: WebDriver) {
 
     fun saveToExcel() {
         val workbook: Workbook = XSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet("SalesList")
+        val sheet: Sheet = workbook.createSheet("3sk박스")
         val headers = listOf("이름", "사이즈", "포장수량", "전체가격", "장당가격")
 
         val headerRow: Row = sheet.createRow(0)

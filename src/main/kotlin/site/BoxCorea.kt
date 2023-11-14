@@ -71,7 +71,7 @@ class BoxCorea(private val driver: WebDriver) {
 
     fun saveToExcel() {
         val workbook: Workbook = XSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet("SalesList")
+        val sheet: Sheet = workbook.createSheet("박스코리아")
         val headers = listOf("이름", "사이즈", "가격")
 
         val headerRow: Row = sheet.createRow(0)

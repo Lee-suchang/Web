@@ -17,7 +17,7 @@ class MjBox(private val driver: WebDriver) {
     private val mjBoxList = mutableListOf<MjBoxData>()
 
     fun getList2() = mjBoxList
-    fun Start() {
+    fun start() {
         println("---MJBOX START---")
         driver.get("https://www.mjbox.co.kr/goods/goods_list.php?cateCd=001")
         Thread.sleep(1500)
@@ -104,7 +104,7 @@ class MjBox(private val driver: WebDriver) {
 
     fun saveToExcel() {
         val workbook: Workbook = XSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet("SalesList")
+        val sheet: Sheet = workbook.createSheet("명진포장")
         val headers = listOf("이름", "사이즈", "포장수", "가격", "장당 가격")
 
         val headerRow: Row = sheet.createRow(0)

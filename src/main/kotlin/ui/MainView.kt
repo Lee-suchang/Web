@@ -60,6 +60,7 @@ class MainView : View() {
                         marginLeft = 10.0
                         marginBottom = 10.0
                     }
+
                     action {
                         runAsync {
                             try {
@@ -95,7 +96,44 @@ class MainView : View() {
                             textArea.appendText("BOXFORYOU START\n")
                             textArea.appendText("BOXFORYOU END\n")
                             textArea.appendText("Xncmall END\n")
-*/
+                            */
+                            try {
+                                textArea.appendText("Box4u START\n")
+                                controller.getBox4u().start()
+                                textArea.appendText("Box4u END\n")
+                            } catch (e: Exception) {
+                                textArea.appendText("Box4u ERROR\n")}
+                                //
+                            try {
+                                textArea.appendText("BoxCorea START\n")
+                                controller.getBoxCorea().start()
+                                textArea.appendText("BoxCorea END\n")
+                            } catch (e: Exception) {
+                                textArea.appendText("BoxCorea ERROR\n")}
+
+                                //
+                            try {
+                                textArea.appendText("mj START\n")
+                                controller.getMjBox().start()
+                                textArea.appendText("mj END\n")
+                            } catch (e: Exception) {
+                                textArea.appendText("mj ERROR\n")}
+                                //
+                            try {
+                                textArea.appendText("3sk START\n")
+                                controller.getThirdBox().start()
+                                textArea.appendText("3sk END\n")
+                            } catch (e: Exception) {
+                                textArea.appendText("3sk ERROR\n")}
+                                //
+                            try {
+                                textArea.appendText("yd START\n")
+                                controller.getYbMall().start()
+                                textArea.appendText("yd END\n")
+                            } catch (e: Exception) {
+                                textArea.appendText("yd ERROR\n")}
+                            }
+
 
                         }
 
@@ -120,4 +158,3 @@ class MainView : View() {
                 }
             }
         }
-}

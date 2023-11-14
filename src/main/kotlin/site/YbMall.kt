@@ -34,8 +34,8 @@ class YbMall(private val driver: WebDriver) {
                     driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[$productIndex]")).text
                 val splitTest = product.split(" ")
                 val name = splitTest[0]
-                val size = splitTest[1]
-                val price = splitTest[5].replace("*", "x") // "*"를 "x"로 대체
+                val size = splitTest[1].replace("*", "x")
+                val price = splitTest[5]
                 println("이름$name")
                 println("규격$size")
                 println("가격$price")
@@ -53,7 +53,7 @@ class YbMall(private val driver: WebDriver) {
 
     fun saveToExcel() {
         val workbook: Workbook = XSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet("SalesList")
+        val sheet: Sheet = workbook.createSheet("Yd박스몰")
         val headers = listOf("이름", "사이즈", "가격")
 
         val headerRow: Row = sheet.createRow(0)
